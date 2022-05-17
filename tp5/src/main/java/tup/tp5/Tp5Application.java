@@ -15,6 +15,31 @@ public class Tp5Application {
 
 	@GetMapping("/")
 	public String hola() {
-		return String.format("¡Hola!");
+
+		String respuesta = "";
+
+		String[] entradas = { "1", "2", "2", "7" };
+
+		int cuantos = entradas.length;
+
+		respuesta += "Cantidad de entradas: " + entradas.length;
+
+		for (int i = 0; i < cuantos; i++) {
+			respuesta += "<br> entrada[" + i + "]: " + entradas[i];
+		}
+
+		String anterior = entradas[0];
+
+		for (int i = 1; i < cuantos; i++) {
+			if (entradas[i].equals(anterior)) {
+				respuesta += "Dos entradas seguidas iguales.";
+			} else {
+				anterior = entradas[i];
+				respuesta += "<br> entradas distintas";
+
+			}
+		}
+
+		return respuesta;
 	}
 }
