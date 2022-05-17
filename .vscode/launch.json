@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Tp5Application<tp5>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "tup.tp5.Tp5Application",
+            "projectName": "tp5",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
