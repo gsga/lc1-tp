@@ -13,6 +13,41 @@ public class ArraysApplication {
 		SpringApplication.run(ArraysApplication.class, args);
 	}
 
+	@GetMapping("/copy")
+	public String copy() {
+		String msg = "";
+
+		String[] copyFrom = {
+				"Affogato", "Americano", "Cappuccino", "Corretto", "Cortado",
+				"Doppio", "Espresso", "Frappucino", "Freddo", "Lungo", "Macchiato",
+				"Marocchino", "Ristretto" };
+
+		String[] copyTo = new String[7];
+
+		System.arraycopy(copyFrom, 4, copyTo, 0, 7);
+		for (String coffee : copyTo) {
+			msg += coffee + ", ";
+		}
+
+		return msg;
+	}
+
+	@GetMapping("/multi")
+	public String multiDim() {
+		String msg = "";
+
+		String[][] names = {
+				{ "Mr. ", "Mrs. ", "Ms. " },
+				{ "Smith", "Jones" }
+		};
+		// Mr. Smith
+		msg += names[0][0] + names[1][0] + "<br>";
+		// Ms. Jones
+		msg += names[0][2] + names[1][1];
+
+		return msg;
+	}
+
 	@GetMapping("/")
 	public String hola() {
 		// declares an array of integers
