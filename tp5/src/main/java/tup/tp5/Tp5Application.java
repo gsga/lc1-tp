@@ -40,6 +40,22 @@ public class Tp5Application {
 			}
 		}
 
+		long suma = 0L;
+		double producto = 1;
+
+		int prim = 20;
+		int ulti = 100;
+
+		for (int i = prim; i <= ulti; i++) {
+			if (i % 2 == 0) {
+				suma += i;
+				producto *= i;
+			}
+		}
+
+		respuesta = "Suma = " + suma + "<br>" + "Producto = " + producto;
+
 		return respuesta;
 	}
+
 }
